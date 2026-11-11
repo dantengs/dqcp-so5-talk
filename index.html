@@ -74,6 +74,8 @@ table.data tr.hlr td{background:var(--hl)}
 .divider h2{font-size:56px;margin:6px 0 18px;line-height:1.15}
 .divider p{font-size:28px;color:var(--muted);max-width:1040px;margin:0}
 .flow{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+a.conf{color:var(--acc);text-decoration:none;border-bottom:2px solid var(--acc)}
+a.conf:hover{background:var(--hl)}
 .body>.row>.card{display:flex;flex-direction:column;justify-content:center}
 .roomy .small{font-size:28px;line-height:1.45}
 .roomy .card h3{font-size:32px}
@@ -111,7 +113,7 @@ table.data tr.hlr td{background:var(--hl)}
   <div class="auth"><span class="zh">报告人：沈庭弘</span><span class="en">Tinghong Shen</span></div>
   <div class="aff"><span class="zh">东南大学物理学院 · 东南大学丘成桐中心</span><span class="en">School of Physics &amp; Shing-Tung Yau Center, Southeast University</span></div>
   <div class="aff" style="margin-top:14px"><span class="zh">基于与李志金合作的工作：</span><span class="en">Based on work with Zhijin Li:</span> Z. Li, T. Shen, arXiv:2606.09985 <span class="zh">及新稿件（2026）</span><span class="en">and a new manuscript (2026)</span></div>
-  <div class="aff" style="margin-top:22px;color:var(--ink)"><span class="zh">Bootstrap 会议 · 上海数学与交叉学科研究院（SIMIS） · 2026 年 11 月 22–24 日</span><span class="en">Bootstrap Conference · Shanghai Institute for Mathematics and Interdisciplinary Sciences (SIMIS) · Nov 22–24, 2026</span></div>
+  <div class="aff" style="margin-top:22px;color:var(--ink)"><a class="conf" href="https://yuanxin2015.github.io/bootstrap-simis/" target="_blank" rel="noopener">Bootstrap Workshop 2026 ↗</a> · <span class="zh">上海数学与交叉学科研究院（SIMIS） · 2026 年 11 月 22–24 日</span><span class="en">Shanghai Institute for Mathematics and Interdisciplinary Sciences (SIMIS) · 22–24 November 2026</span></div>
 </section>
 
 <!-- 2 TLDR -->
@@ -724,7 +726,7 @@ table.data tr.hlr td{background:var(--hl)}
   <div class="auth"><span class="zh">沈庭弘</span><span class="en">Tinghong Shen</span> · thshen@seu.edu.cn</div>
   <div class="aff"><span class="zh">合作者：李志金（东南大学）</span><span class="en">Collaborator: Zhijin Li (Southeast University)</span></div>
   <div class="aff" style="margin-top:20px;max-width:1050px;font-size:20px"><span class="zh">感谢 Denis Bernard、Yifei He、Adam Nahum、Kay Wiese、Wei Zhu、Meng Cheng、David Poland、Hui Shao、Ning Su、Cenke Xu 的讨论。资助：东南大学启动经费 4007022314；国家自然科学基金 12375061。</span><span class="en">We thank Denis Bernard, Yifei He, Adam Nahum, Kay Wiese, Wei Zhu, Meng Cheng, David Poland, Hui Shao, Ning Su and Cenke Xu for discussions. Support: SEU Startup Funding 4007022314; NSFC Grant No. 12375061.</span></div>
-  <div class="aff" style="margin-top:22px;color:var(--ink)">SIMIS · 2026.11.22–24</div>
+  <div class="aff" style="margin-top:22px;color:var(--ink)"><a class="conf" href="https://yuanxin2015.github.io/bootstrap-simis/" target="_blank" rel="noopener">Bootstrap Workshop 2026 · SIMIS ↗</a> · 2026.11.22–24</div>
 </section>
 
 <!-- A -->
@@ -917,7 +919,7 @@ table.data tr.hlr td{background:var(--hl)}
   slides.forEach(function(s,k){
     if(s.classList.contains('title')||s.classList.contains('divider')) return;
     var f=document.createElement('div'); f.className='foot';
-    f.innerHTML='<span><span class="zh">沈庭弘</span><span class="en">Tinghong Shen</span> · SO(5) DQCP · SIMIS 2026</span><span>'+(s.getAttribute('data-sec')||'')+' · '+(k+1)+'</span>';
+    f.innerHTML='<span><span class="zh">沈庭弘</span><span class="en">Tinghong Shen</span> · SO(5) DQCP · Bootstrap Workshop 2026, SIMIS</span><span>'+(s.getAttribute('data-sec')||'')+' · '+(k+1)+'</span>';
     s.appendChild(f);
   });
   function setLang(l){ root.setAttribute('data-lang',l); root.setAttribute('lang',l==='zh'?'zh':'en'); try{localStorage.setItem('dqcp-talk-lang',l);}catch(e){} }
