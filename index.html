@@ -21,7 +21,7 @@ html[data-lang="zh"] .en{display:none !important}
 html[data-lang="en"] .zh{display:none !important}
 #stage{position:fixed;inset:0}
 #deck{position:absolute;left:50%;top:50%;width:1280px;height:720px;transform-origin:center center}
-.slide{position:absolute;inset:0;background:var(--slide);padding:30px 54px 46px;display:none;flex-direction:column;overflow:hidden;font-family:var(--text);font-size:25px;line-height:1.5}
+.slide{position:absolute;inset:0;background:var(--slide);padding:30px 54px 46px;display:none;flex-direction:column;overflow:hidden;font-family:var(--text);font-size:25px;line-height:1.4}
 .slide.active{display:flex}
 .slide>header{display:flex;align-items:center;gap:16px;margin-bottom:18px;border-bottom:2px solid var(--line);padding-bottom:10px;padding-right:250px}
 .slide>header h2{margin:0;font-family:var(--sans);font-size:35px;font-weight:700;line-height:1.2}
@@ -36,9 +36,13 @@ html[data-lang="en"] .zh{display:none !important}
 .card h3{margin:0 0 10px;font-size:30px;line-height:1.2}
 .card.qmc{border-top:6px solid var(--qmc)}.card.cb{border-top:6px solid var(--cb)}.card.fs{border-top:6px solid var(--fs)}.card.acc{border-top:6px solid var(--acc)}.card.warn{border-top:6px solid var(--warn)}.card.dk{border-top:6px solid #3b3f4a}
 .card.qmc h3{color:var(--qmc)}.card.cb h3{color:var(--cb)}.card.fs h3{color:var(--fs)}.card.acc h3{color:var(--acc)}.card.warn h3{color:var(--warn)}
-ul{margin:0;padding-left:28px} li{margin:7px 0}
+ul{margin:0;padding-left:28px} li{margin:9px 0}
 li::marker{color:var(--acc)}
-.small{font-size:23px;line-height:1.5}.tiny{font-size:16.5px;line-height:1.4;color:var(--muted)}
+.small{font-size:23px;line-height:1.42}.tiny{font-size:16.5px;line-height:1.4;color:var(--muted)}
+/* Group names, operators and symbols remain upright; variable glyphs retain their source form. */
+.m,.eq,sub,sup{font-style:normal}
+.card .small b,.quote b{color:var(--cb)}
+.card.qmc .small b{color:var(--qmc)}.card.fs .small b{color:var(--fs)}
 .muted{color:var(--muted)}
 .m{font-family:var(--math);white-space:nowrap}
 .eq{font-family:var(--math);font-size:32px;text-align:center;padding:12px 16px;background:var(--soft);border-radius:10px;line-height:1.35}
@@ -84,7 +88,7 @@ a.ref:hover,a.ref:focus-visible{color:var(--cb);background:var(--hl)}
 .history table.data th,.history table.data td{padding:5px 12px}
 .history .ref{font-size:14px;line-height:1.25}
 .body>.row>.card{display:flex;flex-direction:column;justify-content:center}
-.roomy .small{font-size:25px;line-height:1.5}
+.roomy .small{font-size:25px;line-height:1.4}
 .roomy .card h3{font-size:29px}
 .roomy table.data{font-size:25px}
 .roomy table.data td,.roomy table.data th{padding:12px 14px}
@@ -171,26 +175,26 @@ a.ref:hover,a.ref:focus-visible{color:var(--cb);background:var(--hl)}
     <div class="row">
       <div class="c" style="flex:1.15">
         <ul>
-          <li><span class="zh"><b class="red">Néel</b> 破缺自旋 SO(3)，<b class="pur">VBS</b> 破缺格点 C<sub>4</sub>：Landau 理论预言一级相变或中间相</span><span class="en"><b class="red">Néel</b> breaks spin SO(3), <b class="pur">VBS</b> breaks lattice C<sub>4</sub>: Landau predicts first order or an intermediate phase</span></li>
-          <li><span class="zh"><b>DQCP</b>（Senthil 等 2004）：spinon 分数化 + emergent gauge field → 直接连续相变</span><span class="en"><b>DQCP</b> (Senthil et al. 2004): fractionalized spinons + emergent gauge field → a direct continuous transition</span></li>
+          <li><span class="zh"><b class="red">Néel</b> 破缺自旋 SO(3)；<b class="pur">VBS</b> 破缺格点 C<sub>4</sub>。Landau 理论预言一级相变或中间相。</span><span class="en"><b class="red">Néel</b> breaks spin SO(3); <b class="pur">VBS</b> breaks lattice C<sub>4</sub>. Landau predicts first order or an intermediate phase.</span></li>
+          <li><span class="zh"><b>DQCP</b>：分数化 spinon 与涌现规范场允许直接连续相变。</span><span class="en"><b>DQCP</b>: fractionalized spinons and an emergent gauge field allow a direct continuous transition.</span></li>
           <li><span class="zh">monopole 携带 VBS 量子数</span><span class="en">Monopoles carry VBS quantum numbers</span></li>
         </ul>
-        <div class="eq" style="margin-top:18px;font-size:25px">ℒ<sub>NCCP¹</sub> = Σ<sub>a</sub>|(∂<sub>μ</sub> − <i>i</i>A<sub>μ</sub>)z<sub>a</sub>|² + λ(|z<sub>1</sub>|²+|z<sub>2</sub>|²)²</div>
+        <div class="eq" style="margin-top:18px;font-size:25px">ℒ<sub>NCCP¹</sub> = Σ<sub>a</sub>|(∂<sub>μ</sub> − iA<sub>μ</sub>)z<sub>a</sub>|² + λ(|z<sub>1</sub>|²+|z<sub>2</sub>|²)²</div>
       </div>
       <div class="card c" style="align-items:center">
         <svg viewBox="0 0 470 330" width="470" height="330" aria-label="Neel and VBS schematic">
           <defs>
-            <marker id="ah" markerWidth="7" markerHeight="7" refX="3.5" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 z" fill="#c43d48"/></marker>
+            <marker id="ah" markerUnits="userSpaceOnUse" markerWidth="7" markerHeight="6" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 z" fill="#c43d48"/></marker>
             <marker id="ah2" markerWidth="10" markerHeight="10" refX="6" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#2a5ea8"/></marker>
             <g id="grid"><g stroke="#dcd5c6" stroke-width="2"><line x1="25" y1="70" x2="185" y2="70"/><line x1="25" y1="120" x2="185" y2="120"/><line x1="25" y1="170" x2="185" y2="170"/><line x1="25" y1="220" x2="185" y2="220"/><line x1="25" y1="70" x2="25" y2="220"/><line x1="78" y1="70" x2="78" y2="220"/><line x1="131" y1="70" x2="131" y2="220"/><line x1="185" y1="70" x2="185" y2="220"/></g></g>
           </defs>
           <text x="105" y="40" text-anchor="middle" font-size="24" font-weight="700" fill="#c43d48">Néel</text>
           <use href="#grid"/>
-          <g stroke="#c43d48" stroke-width="3" marker-end="url(#ah)">
-            <g transform="translate(0,28) scale(1,.6)"><line x1="25" y1="85" x2="25" y2="55"/><line x1="78" y1="55" x2="78" y2="85"/><line x1="131" y1="85" x2="131" y2="55"/><line x1="185" y1="55" x2="185" y2="85"/></g>
-            <g transform="translate(0,48) scale(1,.6)"><line x1="25" y1="105" x2="25" y2="135"/><line x1="78" y1="135" x2="78" y2="105"/><line x1="131" y1="105" x2="131" y2="135"/><line x1="185" y1="135" x2="185" y2="105"/></g>
-            <g transform="translate(0,68) scale(1,.6)"><line x1="25" y1="185" x2="25" y2="155"/><line x1="78" y1="155" x2="78" y2="185"/><line x1="131" y1="185" x2="131" y2="155"/><line x1="185" y1="155" x2="185" y2="185"/></g>
-            <g transform="translate(0,88) scale(1,.6)"><line x1="25" y1="205" x2="25" y2="235"/><line x1="78" y1="235" x2="78" y2="205"/><line x1="131" y1="205" x2="131" y2="235"/><line x1="185" y1="235" x2="185" y2="205"/></g>
+          <g stroke="#c43d48" stroke-width="1.8" marker-end="url(#ah)">
+            <line x1="25" y1="87" x2="25" y2="53"/><line x1="78" y1="53" x2="78" y2="87"/><line x1="131" y1="87" x2="131" y2="53"/><line x1="185" y1="53" x2="185" y2="87"/>
+            <line x1="25" y1="103" x2="25" y2="137"/><line x1="78" y1="137" x2="78" y2="103"/><line x1="131" y1="103" x2="131" y2="137"/><line x1="185" y1="137" x2="185" y2="103"/>
+            <line x1="25" y1="187" x2="25" y2="153"/><line x1="78" y1="153" x2="78" y2="187"/><line x1="131" y1="187" x2="131" y2="153"/><line x1="185" y1="153" x2="185" y2="187"/>
+            <line x1="25" y1="203" x2="25" y2="237"/><line x1="78" y1="237" x2="78" y2="203"/><line x1="131" y1="203" x2="131" y2="237"/><line x1="185" y1="237" x2="185" y2="203"/>
           </g>
           <g transform="translate(260,0)">
             <text x="105" y="40" text-anchor="middle" font-size="24" font-weight="700" fill="#6b4ea2">VBS</text>
@@ -256,7 +260,7 @@ a.ref:hover,a.ref:focus-visible{color:var(--cb);background:var(--hl)}
   <div class="body">
     <div class="fig"><canvas class="figc" data-fig="fig1bc" width="1530" height="330" role="img" aria-label="Real multicritical CFT vs complex-CFT walking" style="height:300px"></canvas></div>
     <div class="row">
-      <div class="card qmc c"><h3>Multicritical</h3><div class="small"><span class="zh">真实的 unitary fixed point，有 <b>两个 relevant 方向</b>：t 与 s。格点扫描只调掉 t，残余的 s 让 RG flow 离开 → weakly first order</span><span class="en">A real unitary fixed point with <b>two relevant directions</b>, t and s. The lattice scan tunes t only; the residual s drives the flow away → weakly first order</span></div></div>
+      <div class="card qmc c"><h3>Multicritical</h3><div class="small"><span class="zh">实的 unitary fixed point 有 <b>两个 relevant 方向</b>：t 与 s。格点扫描调 t，残余 s 驱动弱一级相变。</span><span class="en">A real unitary fixed point has <b>two relevant directions</b>, t and s. The scan tunes t; residual s drives a weakly first-order transition.</span></div></div>
       <div class="card acc c"><h3 class="blu">Complex-CFT walking</h3><div class="small"><span class="zh">fixed points 离开实轴，RG flow 缓慢 walking；walking 方向近乎 marginal，<b>Δ<sub>s</sub> ≈ 3</b></span><span class="en">Fixed points leave the real axis; the flow walks slowly; the walking direction is nearly marginal, <b>Δ<sub>s</sub> ≈ 3</b></span></div></div>
     </div>
   </div>
@@ -271,7 +275,7 @@ a.ref:hover,a.ref:focus-visible{color:var(--cb);background:var(--hl)}
       <div class="card acc c"><h3><span class="zh">① singlet 是否明显 relevant</span><span class="en">① Is the singlet clearly relevant?</span></h3><div class="small"><span class="zh">walking 要求 Δ<sub>s</sub> ≈ 3。<br>Δ<sub>s</sub> 明显小于 3 → 实的 multicritical fixed point</span><span class="en">Walking wants Δ<sub>s</sub> ≈ 3.<br>Δ<sub>s</sub> well below 3 → a real multicritical fixed point</span></div></div>
       <div class="card cb c"><h3><span class="zh">② 是否存在 unitary 的 operator algebra</span><span class="en">② Is there a unitary operator algebra?</span></h3><div class="small"><span class="zh">spectrum + OPE 能否同时满足 crossing symmetry 与 reflection positivity：<b>这正是 bootstrap 能回答的</b></span><span class="en">Do spectrum + OPE satisfy crossing and reflection positivity together: <b>exactly what the bootstrap answers</b></span></div></div>
     </div>
-    <div class="card warn c"><div class="small"><b><span class="zh">策略：</span><span class="en">Strategy:</span></b> <span class="zh">用少数 QMC 维度 <b>定位</b> bootstrap 解，再用 <b>不参与定位</b> 的 higher spectrum 与 OPE 来检验它</span><span class="en">use a few QMC dimensions to <b>locate</b> the bootstrap solution, then test it with higher spectra and OPEs <b>not used to locate it</b></span></div></div>
+    <div class="card warn c"><div class="small"><b><span class="zh">策略：</span><span class="en">Strategy:</span></b> <span class="zh">用少数 QMC 维度 <b>定位</b>，再用独立的高能谱与 OPE <b>检验</b>。</span><span class="en"><b>Locate</b> with a few QMC dimensions; <b>test</b> with independent higher spectra and OPEs.</span></div></div>
   </div>
 </section>
 
@@ -515,7 +519,7 @@ a.ref:hover,a.ref:focus-visible{color:var(--cb);background:var(--hl)}
   <header><span class="chip fs">IV</span><h2><span class="zh">两项技术改进</span><span class="en">Two technical improvements</span></h2></header>
   <div class="body roomy">
     <div class="row">
-      <div class="card fs c"><h3>① Symmetry projection</h3><div class="small"><span class="zh">按 ℓ 与 SU(2)<sub>A</sub>×SU(2)<sub>B</sub> ⊂ Spin(5) 分块，再分辨 exchange 本征值、Casimir 与 parity：精确约化，<b>到达 N = 12</b></span><span class="en">Block by ℓ and SU(2)<sub>A</sub>×SU(2)<sub>B</sub> ⊂ Spin(5), then exchange eigenvalue, Casimir and parity: an exact reduction <b>reaching N = 12</b></span></div></div>
+      <div class="card fs c"><h3>① Symmetry projection</h3><div class="small"><span class="zh">按 ℓ 与 SU(2)<sub>A</sub>×SU(2)<sub>B</sub> ⊂ Spin(5) 分块，再区分 exchange、Casimir 与 parity：精确约化至 <b>N = 12</b>。</span><span class="en">Block by ℓ and SU(2)<sub>A</sub>×SU(2)<sub>B</sub> ⊂ Spin(5), then resolve exchange, Casimir and parity: exact reduction to <b>N = 12</b>.</span></div></div>
       <div class="card fs c"><h3>② Conformal lowering</h3><div class="small"><span class="zh">primary 满足 K<sub>μ</sub>|𝒪⟩ = 0。由 energy density 构造 K<sub>μ</sub>，</span><span class="en">A primary obeys K<sub>μ</sub>|𝒪⟩ = 0. Build K<sub>μ</sub> from the energy density,</span><div class="m" style="font-size:30px;text-align:center;margin:8px 0">Q<sub>K</sub> = Σ<sub>μ</sub> K<sub>μ</sub><sup>†</sup>K<sub>μ</sub></div><span class="zh">投影权重 w<sub>P</sub> ≥ 0.90 判为 primary</span><span class="en">projection weight w<sub>P</sub> ≥ 0.90 → primary</span></div></div>
     </div>
     <div class="quote" style="font-size:26px"><span class="zh">分类 <b>不使用任何 bootstrap 信息</b>，因此与 bootstrap 谱的吻合是独立检验。</span><span class="en">The classification uses <b>no bootstrap input</b>, so agreement with the bootstrap spectrum is an independent test.</span></div>
@@ -658,7 +662,7 @@ a.ref:hover,a.ref:focus-visible{color:var(--cb);background:var(--hl)}
       <div class="card stat"><div class="mid pur">y<sub>t</sub> ≈ 1.54</div><div class="lab"><span class="zh">区分 Néel 与 VBS</span><span class="en">distinguishes Néel from VBS</span></div></div>
       <div class="card stat"><div class="mid blu">ξ ∝ |u<sub>s</sub>|<sup>−1.35</sup></div><div class="lab">crossover length</div></div>
     </div>
-    <div class="card qmc c"><div class="small" style="font-size:24px"><span class="zh">格点扫描调掉 u<sub>t</sub>，但留下小的 u<sub>s</sub>：RG flow 先经过 fixed point、共享一段很长的 scaling regime，再离开 → <b>weakly first order</b>。</span><span class="en">A lattice scan tunes u<sub>t</sub> but leaves a small u<sub>s</sub>: the flow passes the fixed point, shares a long scaling regime, then departs → <b>weakly first order</b>.</span></div></div>
+    <div class="card qmc c"><div class="small" style="font-size:24px"><span class="zh">格点扫描调掉 u<sub>t</sub>，留下小的 u<sub>s</sub>：RG 流经过漫长的 scaling regime 后离开，最终呈现 <b>weakly first order</b>。</span><span class="en">The scan tunes u<sub>t</sub> but leaves a small u<sub>s</sub>: after a long scaling regime, the flow departs → <b>weakly first order</b>.</span></div></div>
   </div>
 </section>
 
