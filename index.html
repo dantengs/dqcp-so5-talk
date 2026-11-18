@@ -9,7 +9,8 @@
   --ink:#1b2231; --muted:#566074; --faint:#8a92a3;
   --page:#1a1d23; --slide:#fffdf8; --card:#ffffff; --line:#e2ddd1; --soft:#f3f0e8;
   --qmc:#c43d48; --cb:#6b4ea2; --fs:#14857a; --acc:#2a5ea8; --warn:#b26a00; --hl:#fff0b8; --good:#1d7a46;
-  --sans:"Segoe UI","Noto Sans SC","Microsoft YaHei","PingFang SC","Helvetica Neue",Arial,sans-serif;
+  --sans:"Segoe UI","Noto Sans SC","Microsoft YaHei","PingFang SC",Arial,sans-serif;
+  --text:Georgia,"Palatino Linotype","Songti SC","SimSun",serif;
   --math:"STIX Two Text","Cambria","Times New Roman",serif;
 }
 @media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){ --page:#0f1115; } }
@@ -20,10 +21,10 @@ html[data-lang="zh"] .en{display:none !important}
 html[data-lang="en"] .zh{display:none !important}
 #stage{position:fixed;inset:0}
 #deck{position:absolute;left:50%;top:50%;width:1280px;height:720px;transform-origin:center center}
-.slide{position:absolute;inset:0;background:var(--slide);padding:30px 54px 46px;display:none;flex-direction:column;overflow:hidden;font-size:27px;line-height:1.42}
+.slide{position:absolute;inset:0;background:var(--slide);padding:30px 54px 46px;display:none;flex-direction:column;overflow:hidden;font-family:var(--text);font-size:25px;line-height:1.5}
 .slide.active{display:flex}
 .slide>header{display:flex;align-items:center;gap:16px;margin-bottom:18px;border-bottom:2px solid var(--line);padding-bottom:10px;padding-right:250px}
-.slide>header h2{margin:0;font-size:38px;font-weight:750;line-height:1.15}
+.slide>header h2{margin:0;font-family:var(--sans);font-size:35px;font-weight:700;line-height:1.2}
 .chip{font-size:15px;font-weight:700;letter-spacing:.6px;color:#fff;background:var(--acc);border-radius:5px;padding:4px 10px;white-space:nowrap}
 .chip.qmc{background:var(--qmc)}.chip.cb{background:var(--cb)}.chip.fs{background:var(--fs)}.chip.ai{background:#3b3f4a}.chip.bk{background:#8a92a3}
 .body{flex:1;min-height:0;display:flex;flex-direction:column;justify-content:space-evenly;gap:16px}
@@ -37,7 +38,7 @@ html[data-lang="en"] .zh{display:none !important}
 .card.qmc h3{color:var(--qmc)}.card.cb h3{color:var(--cb)}.card.fs h3{color:var(--fs)}.card.acc h3{color:var(--acc)}.card.warn h3{color:var(--warn)}
 ul{margin:0;padding-left:28px} li{margin:7px 0}
 li::marker{color:var(--acc)}
-.small{font-size:25px;line-height:1.42}.tiny{font-size:16.5px;line-height:1.35;color:var(--muted)}
+.small{font-size:23px;line-height:1.5}.tiny{font-size:16.5px;line-height:1.4;color:var(--muted)}
 .muted{color:var(--muted)}
 .m{font-family:var(--math);white-space:nowrap}
 .eq{font-family:var(--math);font-size:32px;text-align:center;padding:12px 16px;background:var(--soft);border-radius:10px;line-height:1.35}
@@ -76,14 +77,20 @@ table.data tr.hlr td{background:var(--hl)}
 .flow{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
 a.conf{color:var(--acc);text-decoration:none;border-bottom:2px solid var(--acc)}
 a.conf:hover{background:var(--hl)}
+.ref{font-family:var(--sans);font-size:15px;line-height:1.4;font-weight:500;white-space:nowrap}
+a.ref{color:var(--acc);text-decoration:none;border-bottom:1px solid currentColor}
+a.ref:hover,a.ref:focus-visible{color:var(--cb);background:var(--hl)}
+.history table.data{font-size:20px;line-height:1.25}
+.history table.data th,.history table.data td{padding:5px 12px}
+.history .ref{font-size:14px;line-height:1.25}
 .body>.row>.card{display:flex;flex-direction:column;justify-content:center}
-.roomy .small{font-size:28px;line-height:1.45}
-.roomy .card h3{font-size:32px}
-.roomy table.data{font-size:27px}
-.roomy table.data td,.roomy table.data th{padding:14px 14px}
-.roomy li{margin:12px 0}
-.xroomy .small{font-size:31px}
-.xroomy .card h3{font-size:34px}
+.roomy .small{font-size:25px;line-height:1.5}
+.roomy .card h3{font-size:29px}
+.roomy table.data{font-size:25px}
+.roomy table.data td,.roomy table.data th{padding:12px 14px}
+.roomy li{margin:10px 0}
+.xroomy .small{font-size:27px}
+.xroomy .card h3{font-size:31px}
 #bar{position:fixed;right:92px;top:12px;display:flex;gap:8px;z-index:10;opacity:.3;transition:opacity .2s}
 #bar:hover{opacity:1}
 #bar button,#lang{font:700 15px var(--sans);border:1px solid #666;background:#2a2e36;color:#f0f0f0;border-radius:6px;padding:7px 12px;cursor:pointer}
@@ -179,19 +186,25 @@ a.conf:hover{background:var(--hl)}
           </defs>
           <text x="105" y="40" text-anchor="middle" font-size="24" font-weight="700" fill="#c43d48">Néel</text>
           <use href="#grid"/>
-          <g stroke="#c43d48" stroke-width="4" marker-end="url(#ah)">
-            <line x1="25" y1="85" x2="25" y2="55"/><line x1="78" y1="55" x2="78" y2="85"/><line x1="131" y1="85" x2="131" y2="55"/><line x1="185" y1="55" x2="185" y2="85"/>
-            <line x1="25" y1="105" x2="25" y2="135"/><line x1="78" y1="135" x2="78" y2="105"/><line x1="131" y1="105" x2="131" y2="135"/><line x1="185" y1="135" x2="185" y2="105"/>
-            <line x1="25" y1="185" x2="25" y2="155"/><line x1="78" y1="155" x2="78" y2="185"/><line x1="131" y1="185" x2="131" y2="155"/><line x1="185" y1="155" x2="185" y2="185"/>
-            <line x1="25" y1="205" x2="25" y2="235"/><line x1="78" y1="235" x2="78" y2="205"/><line x1="131" y1="205" x2="131" y2="235"/><line x1="185" y1="235" x2="185" y2="205"/>
+          <g stroke="#c43d48" stroke-width="3" marker-end="url(#ah)">
+            <g transform="translate(0,28) scale(1,.6)"><line x1="25" y1="85" x2="25" y2="55"/><line x1="78" y1="55" x2="78" y2="85"/><line x1="131" y1="85" x2="131" y2="55"/><line x1="185" y1="55" x2="185" y2="85"/></g>
+            <g transform="translate(0,48) scale(1,.6)"><line x1="25" y1="105" x2="25" y2="135"/><line x1="78" y1="135" x2="78" y2="105"/><line x1="131" y1="105" x2="131" y2="135"/><line x1="185" y1="135" x2="185" y2="105"/></g>
+            <g transform="translate(0,68) scale(1,.6)"><line x1="25" y1="185" x2="25" y2="155"/><line x1="78" y1="155" x2="78" y2="185"/><line x1="131" y1="185" x2="131" y2="155"/><line x1="185" y1="155" x2="185" y2="185"/></g>
+            <g transform="translate(0,88) scale(1,.6)"><line x1="25" y1="205" x2="25" y2="235"/><line x1="78" y1="235" x2="78" y2="205"/><line x1="131" y1="205" x2="131" y2="235"/><line x1="185" y1="235" x2="185" y2="205"/></g>
           </g>
           <g transform="translate(260,0)">
             <text x="105" y="40" text-anchor="middle" font-size="24" font-weight="700" fill="#6b4ea2">VBS</text>
             <use href="#grid"/>
-            <g stroke="#6b4ea2" stroke-width="12" stroke-linecap="round" opacity="0.85">
-              <line x1="25" y1="70" x2="78" y2="70"/><line x1="131" y1="70" x2="185" y2="70"/><line x1="25" y1="120" x2="78" y2="120"/><line x1="131" y1="120" x2="185" y2="120"/>
-              <line x1="25" y1="170" x2="78" y2="170"/><line x1="131" y1="170" x2="185" y2="170"/><line x1="25" y1="220" x2="78" y2="220"/><line x1="131" y1="220" x2="185" y2="220"/>
+            <g fill="#6b4ea2" fill-opacity="0.18" stroke="#6b4ea2" stroke-width="2">
+              <ellipse cx="51.5" cy="70" rx="29" ry="9"/><ellipse cx="158" cy="70" rx="29.5" ry="9"/>
+              <ellipse cx="51.5" cy="120" rx="29" ry="9"/><ellipse cx="158" cy="120" rx="29.5" ry="9"/>
+              <ellipse cx="51.5" cy="170" rx="29" ry="9"/><ellipse cx="158" cy="170" rx="29.5" ry="9"/>
+              <ellipse cx="51.5" cy="220" rx="29" ry="9"/><ellipse cx="158" cy="220" rx="29.5" ry="9"/>
             </g>
+            <g fill="#6b4ea2"><circle cx="25" cy="70" r="3"/><circle cx="78" cy="70" r="3"/><circle cx="131" cy="70" r="3"/><circle cx="185" cy="70" r="3"/>
+              <circle cx="25" cy="120" r="3"/><circle cx="78" cy="120" r="3"/><circle cx="131" cy="120" r="3"/><circle cx="185" cy="120" r="3"/>
+              <circle cx="25" cy="170" r="3"/><circle cx="78" cy="170" r="3"/><circle cx="131" cy="170" r="3"/><circle cx="185" cy="170" r="3"/>
+              <circle cx="25" cy="220" r="3"/><circle cx="78" cy="220" r="3"/><circle cx="131" cy="220" r="3"/><circle cx="185" cy="220" r="3"/></g>
           </g>
           <line x1="30" y1="285" x2="445" y2="285" stroke="#2a5ea8" stroke-width="3" marker-end="url(#ah2)"/>
           <circle cx="235" cy="285" r="8" fill="#fff" stroke="#2a5ea8" stroke-width="3"/>
@@ -222,17 +235,17 @@ a.conf:hover{background:var(--hl)}
 </section>
 
 <!-- History -->
-<section class="slide" data-sec="I · Background">
+<section class="slide history" data-sec="I · Background">
   <header><span class="chip">I</span><h2><span class="zh">二十年的数值：有 scaling，但不干净</span><span class="en">Two decades of numerics</span></h2></header>
   <div class="body">
     <table class="data">
       <tr><th class="l" style="width:150px"><span class="zh">时间</span><span class="en">When</span></th><th class="l"><span class="zh">进展</span><span class="en">Development</span></th><th class="l" style="width:270px"><span class="zh">指向</span><span class="en">Points to</span></th></tr>
-      <tr><td class="l">2007–15</td><td class="l"><span class="zh">J–Q model：drifting exponents、scaling violation</span><span class="en">J–Q model: drifting exponents, scaling violations</span></td><td class="l muted"><span class="zh">似临界但不收敛</span><span class="en">critical-looking, not converging</span></td></tr>
-      <tr><td class="l">2016–18</td><td class="l"><span class="zh">Bootstrap：若 singlet irrelevant，则 QMC 指数被排除</span><span class="en">Bootstrap: QMC exponents excluded if the singlet is irrelevant</span></td><td class="l muted"><span class="zh">原始 DQCP 图像被排除</span><span class="en">original picture excluded</span></td></tr>
-      <tr><td class="l">2017–20</td><td class="l">complex fixed points &amp; walking</td><td class="l blu">pseudocriticality</td></tr>
-      <tr><td class="l">2024</td><td class="l"><span class="zh">Fuzzy sphere（Zhou–Hu–Zhu–He）：近似 conformal symmetry</span><span class="en">Fuzzy sphere (Zhou–Hu–Zhu–He): approximate conformal symmetry</span></td><td class="l blu">pseudocriticality</td></tr>
-      <tr class="hlr"><td class="l">2024</td><td class="l"><span class="zh">大规模 QMC（Takahashi–Shao–Zhao–Guo–Sandvik）：weakly first order，附近存在 <b>SO(5) multicritical point</b></span><span class="en">Large-scale QMC (Takahashi–Shao–Zhao–Guo–Sandvik): weakly first order near an <b>SO(5) multicritical point</b></span></td><td class="l red">multicriticality</td></tr>
-      <tr><td class="l">2024–26</td><td class="l"><span class="zh">各向异性相图中的 multicritical point（Chen 等，Liao 等）</span><span class="en">Multicritical points in anisotropic phase diagrams (Chen et al., Liao et al.)</span></td><td class="l red">multicriticality</td></tr>
+      <tr><td class="l">2007–15</td><td class="l"><span class="zh">J–Q model：drifting exponents、scaling violation</span><span class="en">J–Q model: drifting exponents, scaling violations</span><br><a class="ref" href="https://arxiv.org/abs/cond-mat/0611343" target="_blank" rel="noopener">cond-mat/0611343 ↗</a> · <a class="ref" href="https://arxiv.org/abs/1001.4296" target="_blank" rel="noopener">arXiv:1001.4296 ↗</a></td><td class="l muted"><span class="zh">似临界但不收敛</span><span class="en">critical-looking, not converging</span></td></tr>
+      <tr><td class="l">2016–18</td><td class="l"><span class="zh">Bootstrap：若 singlet irrelevant，则 QMC 指数被排除</span><span class="en">Bootstrap: QMC exponents excluded if the singlet is irrelevant</span><br><a class="ref" href="https://arxiv.org/abs/1602.07295" target="_blank" rel="noopener">arXiv:1602.07295 ↗</a> · <a class="ref" href="https://arxiv.org/abs/1812.09281" target="_blank" rel="noopener">arXiv:1812.09281 ↗</a></td><td class="l muted"><span class="zh">原始 DQCP 图像被排除</span><span class="en">original picture excluded</span></td></tr>
+      <tr><td class="l">2017–20</td><td class="l">complex fixed points &amp; walking<br><a class="ref" href="https://arxiv.org/abs/1807.11512" target="_blank" rel="noopener">arXiv:1807.11512 ↗</a> · <a class="ref" href="https://arxiv.org/abs/1912.12315" target="_blank" rel="noopener">arXiv:1912.12315 ↗</a> · <a class="ref" href="https://arxiv.org/abs/1912.13468" target="_blank" rel="noopener">arXiv:1912.13468 ↗</a></td><td class="l blu">pseudocriticality</td></tr>
+      <tr><td class="l">2024</td><td class="l"><span class="zh">Fuzzy sphere（Zhou–Hu–Zhu–He）：近似 conformal symmetry</span><span class="en">Fuzzy sphere (Zhou–Hu–Zhu–He): approximate conformal symmetry</span><br><a class="ref" href="https://arxiv.org/abs/2306.16435" target="_blank" rel="noopener">arXiv:2306.16435 ↗</a></td><td class="l blu">pseudocriticality</td></tr>
+      <tr class="hlr"><td class="l">2024</td><td class="l"><span class="zh">大规模 QMC（Takahashi–Shao–Zhao–Guo–Sandvik）：weakly first order，附近存在 <b>SO(5) multicritical point</b></span><span class="en">Large-scale QMC (Takahashi–Shao–Zhao–Guo–Sandvik): weakly first order near an <b>SO(5) multicritical point</b></span><br><a class="ref" href="https://arxiv.org/abs/2405.06607" target="_blank" rel="noopener">arXiv:2405.06607 ↗</a></td><td class="l red">multicriticality</td></tr>
+      <tr><td class="l">2024–26</td><td class="l"><span class="zh">各向异性相图中的 multicritical point（Chen 等，Liao 等）</span><span class="en">Multicritical points in anisotropic phase diagrams (Chen et al., Liao et al.)</span><br><a class="ref" href="https://arxiv.org/abs/2307.05307" target="_blank" rel="noopener">arXiv:2307.05307 ↗</a> · <a class="ref" href="https://arxiv.org/abs/2405.04470" target="_blank" rel="noopener">arXiv:2405.04470 ↗</a> · <a class="ref" href="https://arxiv.org/abs/2605.03700" target="_blank" rel="noopener">arXiv:2605.03700 ↗</a></td><td class="l red">multicriticality</td></tr>
     </table>
   </div>
 </section>
@@ -407,7 +420,7 @@ a.conf:hover{background:var(--hl)}
       <div class="card c"><ul class="small">
         <li><span class="zh">在 φ×φ 中交换的算符，在 s、t 的 correlators 里也必须有相容的耦合</span><span class="en">An operator exchanged in φ×φ must couple consistently in the s and t correlators</span></li>
         <li><span class="zh">8 个 correlators：φφφφ, ssss, tttt, φφss, φφtt, sstt, φφst, sttt</span><span class="en">Eight correlators: φφφφ, ssss, tttt, φφss, φφtt, sstt, φφst, sttt</span></li>
-        <li><span class="zh">与 Chester–Su 相同的系统，但在 cone 内 <b>联合优化</b> 所有外部数据</span><span class="en">Same system as Chester–Su, but all external data <b>optimized jointly</b> inside the cone</span></li>
+        <li><span class="zh">与 Chester–Su 相同的系统，但在 cone 内 <b>联合优化</b> 所有外部数据</span><span class="en">Same system as Chester–Su, but all external data <b>optimized jointly</b> inside the cone</span><br><a class="ref" href="https://arxiv.org/abs/2310.08343" target="_blank" rel="noopener">Chester–Su · arXiv:2310.08343 ↗</a></li>
       </ul></div>
       <div class="card cb c"><h3><span class="zh">可访问 9 个 irreps</span><span class="en">Nine irreps accessible</span></h3>
         <div><span class="pill">1</span><span class="pill">5</span><span class="pill">10</span><span class="pill">14</span><span class="pill y">30</span><span class="pill y">35</span><span class="pill y">35′</span><span class="pill y">55</span><span class="pill y">81</span></div>
@@ -447,7 +460,7 @@ a.conf:hover{background:var(--hl)}
       <ul class="small">
         <li><span class="zh">Λ 19 → 23：维度变化约 1%，OPE ratios &lt; 0.35%</span><span class="en">Λ 19 → 23: dimensions move ~1%, OPE ratios &lt; 0.35%</span></li>
         <li><span class="zh">所有候选都有 <b>Δ<sub>s</sub> ≈ 2.20–2.26</b></span><span class="en">All candidates have <b>Δ<sub>s</sub> ≈ 2.20–2.26</b></span></li>
-        <li><span class="zh">与 Chester–Su 的解（Δ<sub>s</sub> = 2.359）不同：只有 cone 解重现 fuzzy-sphere 的 OPE</span><span class="en">Distinct from Chester–Su (Δ<sub>s</sub> = 2.359): only the cone solution reproduces the fuzzy-sphere OPEs</span></li>
+        <li><span class="zh">与 Chester–Su 的解（Δ<sub>s</sub> = 2.359）不同：只有 cone 解重现 fuzzy-sphere 的 OPE</span><span class="en">Distinct from Chester–Su (Δ<sub>s</sub> = 2.359): only the cone solution reproduces the fuzzy-sphere OPEs</span><br><a class="ref" href="https://arxiv.org/abs/2310.08343" target="_blank" rel="noopener">Chester–Su · arXiv:2310.08343 ↗</a></li>
       </ul>
     </div>
   </div>
