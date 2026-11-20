@@ -4,4 +4,4 @@ Bilingual (中文 / English) HTML slides by Tinghong Shen for [Bootstrap Worksho
 Based on Z. Li and T. Shen, arXiv:2606.09985, and arXiv:2611.20214.
 
 Open `index.html` in a browser, or visit the GitHub Pages site.
-Keys: ← → navigate · L switch language · F fullscreen · `?lang=en` opens in English · `#N` jumps to slide N.
+Keys: ← → navigate · L switch language · F fullscreen · P presenter view (speaker notes) · `?lang=en` opens in English · `#N` jumps to slide N.
